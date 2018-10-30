@@ -1,5 +1,6 @@
 .body {
     background: rgb(96, 187, 141);
+    overflow-x: hidden;
 }
 
 #loginConsole {
@@ -60,12 +61,16 @@
     margin-top: 8px;
 }
 
-.body nav button {
-    border: none;
-    background:none;
+.w3-container {
+    margin:0 0;
+    padding: 0 0;
 }
-.body nav h3{
-    text-align: center;
-    padding:8px 0 0 100px;
+.w3-container button,span {
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.w3-container span h3{
+    padding-left: 100px;
     color:white;
 }
