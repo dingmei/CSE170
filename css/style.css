@@ -1,6 +1,8 @@
 .body {
     background: rgb(96, 187, 141);
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 .startDiv {

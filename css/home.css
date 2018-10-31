@@ -1,0 +1,56 @@
+.w3-container {
+    margin:0 0;
+    padding: 0 0;
+}
+.w3-container button,span {
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.w3-container span h3{
+    padding-left: 100px;
+    color:white;
+}
+
+#profile-small {
+    text-align: center;
+    background-color: darkcyan;
+    height:96px;
+    padding: 8px 0 8px 0;
+}
+
+#profile-small img {
+    height: 50px;
+    width: 50px;
+    border: white solid 1px;
+}
+
+#profile-small p {
+    padding: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+#timerSection {
+    text-align: center;
+    height:112px;
+    padding: 8px auto;
+}
+
+#timer {
+    margin-block-end: 0;
+    font-size: 36px;
+}
+
+.exeButton {
+    background-color: rgb(79, 126, 29);
+    color:white;
+}
+
+#buttonSection {
+    text-align: center;
+}
+
+.w3-sidebar a{
+    text-decoration: none;
+}

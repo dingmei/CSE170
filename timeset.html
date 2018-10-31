@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.4.2/css/all.css' integrity='sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns' crossorigin='anonymous'>
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/home.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/home.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/timeset.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
@@ -20,9 +22,9 @@
         <a href="#"><img src="./images/icon/man.png" class="rounded-circle"></a>
         <a href="#"><p>Kingsley</p></a>
       </div>
-      <a href="#" class="w3-bar-item w3-button">Home</a>
+      <a href="home.html" class="w3-bar-item w3-button">Home</a>
       <a href="#" class="w3-bar-item w3-button">My Forest</a> 
-      <a href="timeset.html" class="w3-bar-item w3-button">Time Setting</a>
+      <a href="#" class="w3-bar-item w3-button">Time Setting</a>
       <a href="#" class="w3-bar-item w3-button">FAQ</a>
     </div>
   
@@ -35,26 +37,30 @@
       <span><h3>Plant</h3></span>
     </div>
 
-    <div id="timerSection">
-      <h3>Next Exercise In</h3>
-      <p id="timer"></p>
+    <div class="w3-container" id="timeSet">
+            <i class='fas fa-angle-up' style='font-size:36px;'></i>
+            <p>&nbsp;</p>
+            <i class='fas fa-angle-up' style='font-size:36px;'></i><br>
+            <p>30</p><p> : </p><p>00</p><br>
+            <i class='fas fa-angle-down' style='font-size:36px;'></i>
+            <p>&nbsp;</p>
+            <i class='fas fa-angle-down' style='font-size:36px;'></i><br>
     </div>
 
-    <div style="height: 288px;">
-      <p>unused div for progress</p>
+    <div class="w3-container timeButton">
+        <button type="button" class="btn btn-lg resetButton">Reset</button>
+        <button type="button" class="btn btn-lg saveButton">Save</button>
     </div>
-
-    <div id="buttonSection">
-      <button type="button" class="btn btn-lg exeButton">Exercise Now</button>
-    </div>
-    
   </main>
+  
 
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="JS/home.js"></script>
+    <script>
+    </script>
     
 </body>
 </html>
