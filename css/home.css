@@ -83,6 +83,7 @@
     font-family: 'Roboto', sans-serif;
     padding: 48px 0 56px 0;
     border-block-end: 1px grey solid;
+    overflow: visible;
 }
 
 #notiBody p{
@@ -127,6 +128,7 @@
     font-family: 'Roboto', sans-serif;
     padding: 35px 0 35px 0;
     border-block-end: 1px grey solid;
+    overflow: visible;
 }
 
 #succBody p{
@@ -159,6 +161,7 @@
     font-family: 'Roboto', sans-serif;
     padding: 35px 0 35px 0;
     border-block-end: 1px grey solid;
+    overflow: visible;
 }
 
 #failBody p{
