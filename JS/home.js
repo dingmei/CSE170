@@ -16,8 +16,8 @@ $(document).ready(function(){
     var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
 
     if (countdown <= 0) {
-        alert("Time To Do Exercise!");
         clearInterval(timerId);
+        countdown = 30 * 60 * 1000;
     } else {
         
         if(min < 10){
@@ -30,5 +30,5 @@ $(document).ready(function(){
         
         
     }
-    }, 1000); //1000ms. = 1sec.
+    }, 1000);
 });
