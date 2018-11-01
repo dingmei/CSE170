@@ -41,6 +41,49 @@
       <p id="timer"></p>
     </div>
 
+    <div id="countdownOverlay">
+      <div class="w3-display-container  w3-display-middle">
+        <div class="notification">
+          <div id="notiBody">
+            <p>Time to exercise!</p>
+          </div>
+          <div id="notiDecisions">
+            <p id="leftDec" onclick="never()">Never</p>
+            <p id="rightDec" onclick="go();">Go</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="successOverlay">
+      <div class="w3-display-container  w3-display-middle">
+        <div class="notification">
+          <div id="succBody">
+            <p>Nice work, you get closer to your goal!</p>
+          </div>
+          <div>
+            <p class="singleDec" onclick="done();">Done</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+
+    <div id="failOverlay">
+      <div class="w3-display-container  w3-display-middle">
+        <div class="notification">
+          <div id="failBody">
+            <p>Get some exercise when you are free</p>
+          </div>
+          <div>
+            <p class="singleDec" onclick="gotIt();"">Got it</p>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+
     <div style="height: 288px;">
       <p>unused div for progress</p>
     </div>
