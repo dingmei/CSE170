@@ -61,4 +61,4 @@ function startTime(countdown) {
     }
     }, 1000);
 }
-$(document).ready(startTime(30));
+$(document).ready(startTime(0.1));
