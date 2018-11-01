@@ -86,12 +86,20 @@
     height: 900px;
 }
 
-.user-table {
+#title {
     text-align: center;
-    margin-top: 30px;
-    margin-left: 37px;
-    width: 80%;
-    border-bottom: 1px dashed white;
+    font-size: 21px;
+    font-weight: 600;
+    color: #FCCA46;
+    margin-top: -5px;
+}
+#week {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    color: #FCCA46;
+    margin-top: -15px;
+    margin-bottom: -10px;
 }
 
 .user-card {
@@ -109,7 +117,7 @@
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 700;
-    color: #FCCA46;
+    /*color: #FCCA46;*/
    
 }
 
@@ -119,4 +127,5 @@
     padding-top: 10px;
     padding-bottom: 10px;
     font-weight: 600;
+    /*color: white;*/
 }
