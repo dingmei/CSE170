@@ -8,16 +8,45 @@ function w3_close() {
     document.getElementById("myOverlay").style.display = "none";
 }
 
-$(document).ready(function(){
-    var countdown = 30 * 60 * 1000;
+function go() {
+    document.getElementById("countdownOverlay").style.display = "none";
+    setTimeout(function() { goSuc() }, 5000);
+}
+
+function goSuc() {
+    document.getElementById("successOverlay").style.display = "block";
+}
+
+function done() {
+    document.getElementById("successOverlay").style.display = "none";
+    startTime(30);
+}
+
+function never() {
+    document.getElementById("countdownOverlay").style.display = "none";
+    goFail();
+}
+
+function goFail() {
+    document.getElementById("failOverlay").style.display = "block";
+}
+
+function gotIt() {
+    document.getElementById("failOverlay").style.display = "none";
+    startTime(10);
+}
+
+function startTime(countdown) {
+    countdown = countdown * 60 * 1000;
     var timerId = setInterval(function(){
     countdown -= 1000;
     var min = Math.floor(countdown / (60 * 1000));
     var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
 
     if (countdown <= 0) {
+        document.getElementById("countdownOverlay").style.display = "block";
         clearInterval(timerId);
-        countdown = 30 * 60 * 1000;
+        
     } else {
         
         if(min < 10){
@@ -31,4 +60,5 @@ $(document).ready(function(){
         
     }
     }, 1000);
-});
+}
+$(document).ready(startTime(30));
