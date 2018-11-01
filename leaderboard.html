@@ -6,22 +6,39 @@
         <title>Plant</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
-
+        <link rel="stylesheet" type="text/css" media="screen" href="./css/home.css" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body class="body">
-        <header class="header">
-            <h2>Leaderboard</h2>
-            <hr>
-        </header>
-        <main>
-            <div class="main">
-                
+
+        <div class="w3-sidebar w3-bar-block w3-teal w3-animate-left" style="display:none;z-index:4;" id="mySidebar">
+            <div id="profile-small">
+                <a href="#"><img src="./images/icon/man.png" class="rounded-circle"></a>
+                <a href="#"><p>Kingsley</p></a>
             </div>
-        </main>
+            <a href="#" class="w3-bar-item w3-button">Home</a>
+            <a href="#" class="w3-bar-item w3-button">My Forest</a> 
+            <a href="timeset.html" class="w3-bar-item w3-button">Time Setting</a>
+            <a href="help.html" class="w3-bar-item w3-button">FAQ</a>
+        </div>
+  
+        <!-- Overlay -->
+        <div id="myOverlay" class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
+
+        <div class="w3-container">
+            <header class="header">
+                <h2>Leaderboard</h2>
+                <hr>
+            </header>
+            <main>
+                <div class="main">
+                    
+                </div>
+            </main>
+        </div>
     </body>
 
 </html>
