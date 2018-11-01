@@ -5,6 +5,7 @@
     color: white;
 }
 
+/* Starter page CSS */
 .startDiv {
     /*background: white;*/
     height: 280px;
@@ -62,16 +63,10 @@
     font-size:32px;
 }
 
-.w3-container {
-    margin:0 0;
-    padding: 0 0;
-}
-.w3-container button,span {
-    display: inline-block;
-    vertical-align: sub;
-}
 
-.w3-container span h3{
-    padding-left: 100px;
-    color:white;
+/* Leaderboard CSS*/
+
+.header {
+    padding-top: 20px;
+    text-align: center;
 }
