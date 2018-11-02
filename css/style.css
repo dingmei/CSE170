@@ -39,6 +39,7 @@
     border-bottom: solid white 1px;
     background-color: transparent;
     width: 290px;
+    -webkit-appearance: none;
 }
 
 #loginContainer {
