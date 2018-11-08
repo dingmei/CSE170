@@ -37,3 +37,48 @@
 .changeTimeSection{
     display: inline-block;
 }
+
+#timeSetOverlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#timeSetBody {
+    font-family: 'Roboto', sans-serif;
+    padding: 32px 0 32px 0;
+}
+
+#timeSetBody p{
+    margin-block-end: 0;
+    margin-bottom: 0;
+    font-size:28px;
+}
+
+#timeSetDecisions p {
+    display:inline;
+    color: rgba(66, 152, 223, 0.938);
+}
+
+#noDec {
+    border-top: 1px grey solid;
+    border-right: 1px grey solid;
+    float: left;
+    padding:13.5px 65px 13.5px 65px;
+    margin-block-end: 0;
+}
+
+#yesDec {
+    float: left;
+    padding:13.5px 60px 13.5px 60px;
+    margin-block-end: 0;
+    border-top: 1px grey solid;
+}

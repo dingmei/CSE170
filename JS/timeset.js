@@ -78,10 +78,13 @@ function setTime(){
             var ref = firebase.database().ref(userDirName);
             var updates = { durationHour:hour, durationMin:min};
             ref.update(updates);
+            document.getElementById("timeSetOverlay").style.display = "block";
         } else {
           console.log("error, user not sign in.");
         }
       }); 
+}
 
-    
+function confirm(x) {
+    //0 is no 1 is yes
 }
