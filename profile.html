@@ -14,12 +14,25 @@
             html, body {
                 margin: 0;
                 height: 100%;
-                background: #60bb8d;
+                background: rgb(129, 216, 208);
                 overflow-y: hidden;
                 font-family: 'Roboto', sans-serif;
                 color: #233D4D;
             }
         </style>
+        <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+              apiKey: "AIzaSyAiWIjeicshUn4lgra_0FBsgdtK8fREq0I",
+              authDomain: "gogreen-d8743.firebaseapp.com",
+              databaseURL: "https://gogreen-d8743.firebaseio.com",
+              projectId: "gogreen-d8743",
+              storageBucket: "gogreen-d8743.appspot.com",
+              messagingSenderId: "431026737257"
+            };
+            firebase.initializeApp(config);
+        </script>
     </head>
 
     <body>
@@ -31,15 +44,15 @@
                 <a href="profile.html"><p>Kingsley</p></a>
               </div>
               <a href="home.html" class="w3-bar-item w3-button">Home</a>
-              <a href="forest.html" class="w3-bar-item w3-button">My Forest</a> 
+              <a href="forest.html" class="w3-bar-item w3-button">My Forest</a>
               <a href="timeset.html" class="w3-bar-item w3-button">Time Setting</a>
               <a href="leaderboard.html" class="w3-bar-item w3-button">Leaderboard</a>
               <a href="help.html" class="w3-bar-item w3-button">FAQ</a>
             </div>
-          
+
             <!-- Overlay -->
             <div id="myOverlay" class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
-          
+
             <!-- Page content -->
             <div class="w3-container">
               <button class="w3-button w3-xlarge" onclick="w3_open()" style="color:white;">&#9776;</button>
