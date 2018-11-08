@@ -19,7 +19,9 @@ function goSuc() {
 
 function done() {
     document.getElementById("successOverlay").style.display = "none";
-    startTime(30);
+    window.localStorage.setItem("isDone",'true');
+    window.localStorage.setItem("isDelay",'false');
+    startTime();
 }
 
 function never() {
@@ -33,31 +35,106 @@ function goFail() {
 
 function gotIt() {
     document.getElementById("failOverlay").style.display = "none";
-    startTime(10);
+    window.localStorage.setItem("isDone",'true');
+    window.localStorage.setItem("isDelay",'true');
+    startTime();
 }
 
-function startTime(countdown) {
-    countdown = countdown * 60 * 1000;
-    var timerId = setInterval(function(){
-    countdown -= 1000;
-    var min = Math.floor(countdown / (60 * 1000));
-    var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
+function startTime() {
+    var d = new Date();
+    var isDone = window.localStorage.getItem("isDone");
+    var isDelay = window.localStorage.getItem("isDelay");
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var uid = firebase.auth().currentUser.uid;
+            var userDirName = "User/" + uid;
+            var ref = firebase.database().ref(userDirName);
+            ref.once('value').then(function(snapshot) {
+                var hour = snapshot.val().durationHour;
+                var min = snapshot.val().durationMin;
+                var countdown  = parseInt(min) + parseInt(hour) * 60;
+                if(isDelay == 'true'){
+                    countdown = 10;
+                }else{
+                    countdown = parseInt(min) + parseInt(hour) * 60;
+                }
+                countdown = countdown * 60 * 1000;
+                
+                if(isDone === 'true'){
+                    if (window.localStorage) {
+                        window.localStorage.setItem("startedHour",d.getHours());
+                        window.localStorage.setItem("startedMin",d.getMinutes());
+                        window.localStorage.setItem("startedSec",d.getSeconds());
+                        window.localStorage.setItem("isDone",'false');
+                    }         
+                      
+                      var timerId = setInterval(function(){
+                        
+                        countdown -= 1000;
+                        var min = Math.floor(countdown / (60 * 1000));
+                        var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
+        
+                        
+                        if (countdown <= 0) {
+                            document.getElementById("countdownOverlay").style.display = "block";
+                            clearInterval(timerId);
+                            
+                        } else {
+                            
+                            if(min < 10){
+                                min = "0" + min;
+                            }
+                            if(sec < 10){
+                                sec = "0" + sec;
+                            }
+                            $("#timer").html(min + " : " + sec);
+                            
+                            
+                        }
+                        }, 1000);
+                }else{
+                    var startedHour = window.localStorage ? window.localStorage.getItem("startedHour") : '';
+                    var startedMin = window.localStorage ? window.localStorage.getItem("startedMin") : '';
+                    var startedSec = window.localStorage ? window.localStorage.getItem("startedSec") : '';
+                    var currentTime = (d.getHours() - startedHour) * 60 + (d.getMinutes() - startedMin) + (d.getSeconds() - startedSec)/60;
+                    countdown = countdown - (currentTime * 60 * 1000);
+                    var timerId = setInterval(function(){
+                        countdown -= 1000;
+                        var min = Math.floor(countdown / (60 * 1000));
+                        var sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);
+                        if (countdown <= 0) {
+                            document.getElementById("countdownOverlay").style.display = "block";
+                            clearInterval(timerId);
+                            
+                        } else {
+                            
+                            if(min < 10){
+                                min = "0" + min;
+                            }
+                            if(sec < 10){
+                                sec = "0" + sec;
+                            }
+                            $("#timer").html(min + " : " + sec);
+                        }
+                        }, 1000);
+                }
+                
+            });
+        } else {
+          console.log("error, user not sign in.");
+        }
+      }); 
+}
 
-    if (countdown <= 0) {
-        document.getElementById("countdownOverlay").style.display = "block";
-        clearInterval(timerId);
-        
-    } else {
-        
-        if(min < 10){
-            min = "0" + min;
-        }
-        if(sec < 10){
-            sec = "0" + sec;
-        }
-        $("#timer").html(min + " : " + sec);
-        
-        
-    }
-    }, 1000);
+
+function startExe(){
+    document.getElementById("startExeOverlay").display = "block";
+    setTimeout({doneStart()},5000);
+}
+
+function doneStart() {
+    document.getElementById("startExeOverlay").style.display = "none";
+    window.localStorage.setItem("isDone",'true');
+    window.localStorage.setItem("isDelay",'false');
+    startTime();
 }

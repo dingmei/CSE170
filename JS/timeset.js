@@ -7,12 +7,6 @@ function loadSavedTime() {
             ref.once('value').then(function(snapshot) {
                 var hour = snapshot.val().durationHour;
                 var min = snapshot.val().durationMin;
-                if(hour < 10 & hour > 0){
-                    hour = "0" + hour;
-                }
-                if(hour == 0){
-                    hour = "00";
-                }
                 if(min < 10 & min > 0){
                     min = "0" + min;
                 }
@@ -33,17 +27,12 @@ function changeHour(direction){
     //1 is up 0 is down
     var hour = document.getElementById("savedHour").innerHTML;
     if(direction){
-        hour++;
+        if(hour < 1)
+            hour++;
     }else{
         if(hour != 0){
             hour--;
         }
-    }
-    if(hour < 10 & hour > 0){
-        hour = "0" + hour;
-    }
-    if(hour == 0){
-        hour = "00";
     }
     document.getElementById("savedHour").innerHTML = hour;
 }
@@ -52,17 +41,18 @@ function changeMin(direction){
     //1 is up 0 is down
     var min = document.getElementById("savedMin").innerHTML;
     if(direction){
-        min++;
+        if(min < 59)
+            min++;
+        else
+            min = 0;
     }else{
-        if(min != 0){
+        if(min > 0){
             min--;
-        }
+        }else
+            min = 59;
     }
-    if(min < 10 & min > 0){
+    if(min < 10 & min.toString().length == 1){
         min = "0" + min;
-    }
-    if(min == 0){
-        min = "00";
     }
     document.getElementById("savedMin").innerHTML = min;
 }
@@ -85,6 +75,10 @@ function setTime(){
       }); 
 }
 
-function confirm(x) {
-    //0 is no 1 is yes
+function timeSetDone(){
+    document.getElementById("timeSetOverlay").style.display = "none";
+}
+
+function resetTime(){
+    loadSavedTime();
 }

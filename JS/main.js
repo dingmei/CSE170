@@ -35,6 +35,8 @@ function login(e){
     const email = document.getElementById('loginEmail').value;
     const pass = document.getElementById('loginPassword').value;
     firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
+        window.localStorage.setItem("isDone",'true');
+        window.localStorage.setItem("isDelay",'false');
         window.location.href="./home.html";
     });
 }
@@ -62,7 +64,5 @@ function validationCheck(callback) {
                 callback();
             });
         });
-        // window.location.href="./home.html";
-        // alert('Successfully Sign Up!');
     }
 }

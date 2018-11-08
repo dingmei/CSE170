@@ -1,7 +1,29 @@
+#temp {
+    background: hsla(0,0%,100%,.25) border-box; 
+    border-radius: .3em;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    width: 320px;
+    margin:96px auto 96px auto;
+    text-align: center;
+}
 #timeSet {
     font-size: 36px;
     padding:8px auto 8px auto;
-    text-align: center;
+    margin:0 64px 0 64px;
+    display: flex; 
+    
+}
+
+#timeSet::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: -30px;
+    z-index: -1;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
 }
 
 #timeSet p{
@@ -30,8 +52,8 @@
 }
 
 .timeButton {
-    padding-block-start: 50px;
-    text-align: center;   
+    padding: 48px 0 8px 0;
+    text-align: center;
 }
 
 .changeTimeSection{
@@ -40,7 +62,7 @@
 
 #timeSetOverlay {
     position: fixed;
-    display: none;
+    display:none;
     width: 100%;
     height: 100%;
     top: 0;
@@ -54,7 +76,7 @@
 
 #timeSetBody {
     font-family: 'Roboto', sans-serif;
-    padding: 32px 0 32px 0;
+    padding: 56px 0 56px 0;
 }
 
 #timeSetBody p{

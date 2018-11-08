@@ -51,7 +51,8 @@
       <span><h3>Plant</h3></span>
     </div>
     <hr style="margin-top: 0px;">
-    <div class="w3-container" id="timeSet" style="display: flex; margin: 10px 95px ">
+    <div id="temp">
+    <div class="w3-container" id="timeSet">
       <div class="changeTimeSection">
         <i class='fas fa-angle-up' style='font-size:36px;' onclick="changeHour(1);"></i><br>
         <p id="savedHour"></p><br>
@@ -65,22 +66,23 @@
       </div>
       <div class="changeTimeSection" style="align-self: center;"><p>m</p></div>
     </div>
-
-    <div class="w3-container timeButton">
-        <button type="button" class="btn btn-lg resetButton">Reset</button>
-        <button type="button" class="btn btn-lg saveButton" onclick="setTime();">Save</button>
+    <div class=" w3-container timeButton">
+      <button type="button" class="btn btn-lg resetButton" onclick="resetTime();">Reset</button>
+      <button type="button" class="btn btn-lg saveButton" onclick="setTime();">Save</button>
     </div>
+  </div>
+
+    
   </main>
 
   <div id="timeSetOverlay">
     <div class="w3-display-container  w3-display-middle">
       <div class="notification">
         <div id="timeSetBody">
-          <p>Time set! Do you want to restart the timer?</p>
+          <p>Time set!</p>
         </div>
-        <div id="timeSetDecisions">
-          <p id="noDec" onclick="">No</p>
-          <p id="yesDec" onclick="">Yes</p>
+        <div>
+          <p class="singleDec" onclick="timeSetDone();">Done</p>
         </div>
       </div>
     </div>
