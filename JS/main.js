@@ -54,7 +54,8 @@ function validationCheck(callback) {
             ref.set({
                 username: username,
                 plantedTrees: 0,
-                duration: 30,
+                durationHour: 0,
+                durationMin:30,
                 totalExerciseTime: 0,
                 totalExerciseDistance: 0
             }).then(function() {

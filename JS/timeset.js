@@ -1,7 +1,32 @@
 function loadSavedTime() {
-    //hour and min should changed after databse created
-    document.getElementById("savedHour").innerHTML = "00";
-    document.getElementById("savedMin").innerHTML = "30";
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var uid = firebase.auth().currentUser.uid;
+            var userDirName = "User/" + uid;
+            var ref = firebase.database().ref(userDirName);
+            ref.once('value').then(function(snapshot) {
+                var hour = snapshot.val().durationHour;
+                var min = snapshot.val().durationMin;
+                if(hour < 10 & hour > 0){
+                    hour = "0" + hour;
+                }
+                if(hour == 0){
+                    hour = "00";
+                }
+                if(min < 10 & min > 0){
+                    min = "0" + min;
+                }
+                if(min == 0){
+                    min = "00";
+                }
+                document.getElementById("savedHour").innerHTML = hour;
+                document.getElementById("savedMin").innerHTML = min;
+            });
+        } else {
+          console.log("error, user not sign in.");
+        }
+      }); 
+    
 }
 
 function changeHour(direction){
@@ -40,4 +65,23 @@ function changeMin(direction){
         min = "00";
     }
     document.getElementById("savedMin").innerHTML = min;
+}
+
+function setTime(){
+    var hour = document.getElementById("savedHour").innerHTML;
+    var min = document.getElementById("savedMin").innerHTML;
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            var uid = firebase.auth().currentUser.uid;
+            var userDirName = "User/" + uid;
+            var ref = firebase.database().ref(userDirName);
+            var updates = { durationHour:hour, durationMin:min};
+            ref.update(updates);
+        } else {
+          console.log("error, user not sign in.");
+        }
+      }); 
+
+    
 }
