@@ -12,6 +12,19 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./css/home.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="./css/timeset.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyAiWIjeicshUn4lgra_0FBsgdtK8fREq0I",
+          authDomain: "gogreen-d8743.firebaseapp.com",
+          databaseURL: "https://gogreen-d8743.firebaseio.com",
+          projectId: "gogreen-d8743",
+          storageBucket: "gogreen-d8743.appspot.com",
+          messagingSenderId: "431026737257"
+        };
+        firebase.initializeApp(config);
+    </script>
 </head>
 
 <body class="body">
@@ -23,12 +36,15 @@
         <a href="profile.html"><p>Kingsley</p></a>
       </div>
       <a href="home.html" class="w3-bar-item w3-button">Home</a>
+      <a href="forest.html" class="w3-bar-item w3-button">My Forest</a>
       <a href="timeset.html" class="w3-bar-item w3-button">Time Setting</a>
       <a href="leaderboard.html" class="w3-bar-item w3-button">Leaderboard</a>
       <a href="help.html" class="w3-bar-item w3-button">FAQ</a>
     </div>
+
     <!-- Overlay -->
     <div id="myOverlay" class="w3-overlay" onclick="w3_close()" style="cursor:pointer"></div>
+
     <!-- Page content -->
     <div class="w3-container">
       <button class="w3-button w3-xlarge" onclick="w3_open()" style="color:white;">&#9776;</button>
@@ -56,7 +72,9 @@
     </div>
   </main>
 
-    
+
+
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
