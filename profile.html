@@ -33,6 +33,9 @@
             };
             firebase.initializeApp(config);
         </script>
+        <script src="JS/home.js"></script>
+        <script src="JS/profile.js"></script>
+        <script>window.onload = getUsername();</script>
     </head>
 
     <body>
@@ -59,12 +62,35 @@
               <span><h3>Plant</h3></span>
             </div>
             <hr style="margin-top: 0px;">
+            <div style="align-items: center">
+                <a href="profile.html"><img src="./images/icon/man.png" class="rounded-circle center"></a>
+                <h2 id="profile-username" style="text-align: center;"></h2>
+            </div>
 
-            <h1 style="text-align: center;">This is a profile page</h1>
+            <div id="profile-card">
+                <table style="width: 80%">
+                  <tbody>
+                    <tr>
+                      <th>Total exercise time:</th>
+                      <td style="text-align: left;">7.5 hours</td>
+                    </tr>
+                    <tr>
+                      <th>Total exercise distance:</th>
+                      <td style="text-align: left;">3 miles</td>
+                    </tr>
+                    <tr>
+                      <th>Total exercise time:</th>
+                      <td style="text-align: left;">7.5 hours</td>
+                    </tr>
+                  </tbody>
+                  
+                </table>
+            </div>
+
         </main>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        <script src="JS/home.js"></script>
+
     </body>
 </html>

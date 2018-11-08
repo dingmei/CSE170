@@ -138,3 +138,20 @@
     font-weight: 600;
     /*color: white;*/
 }
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 28%;
+}
+
+#profile-card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    background-color: #03baa9 #ef3234;
+    border-radius: 5px;
+}
