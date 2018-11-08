@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
 </head>
 
 <body class="body">
@@ -25,15 +26,15 @@
                         <!-- Sign in page content -->
                         <div class="col-10 startDiv" id="loginConsole">
                             <form id="loginForm" method="GET">
-                                <label for="email">Email: </label><br>
+                                <label for="loginEmail">Email: </label><br>
                                 <input class="input" type="text" id="loginEmail"><br>
                                 <label for="password">Password: </label><br>
                                 <input class="input" type="password" id="loginPassword"><br><br>
-                                <button id="loginBtn" type="button" class="btn btn-block loginButton" onclick='window.open("home.html","_self");'>Login</button>
+                                <button id="loginBtn" type="button" class="btn btn-block loginButton" onclick="login(event);">Login</button>
                             </form>
                             <br>
                             <br>
-                            <p>Don't have an Account? <a href="#" id="sign-up"><abbr title="signup">Sign up</abbr></a></p>
+                            <p>Don't have an account? <a href="#" id="sign-up"><abbr title="signup">Sign up</abbr></a></p>
                         </div>
 
                         <!-- Sign up page content -->
@@ -41,13 +42,15 @@
                             <form id="loginForm" method="GET">
                                 <label for="email">Email: </label><br>
                                 <input class="input" type="text" id="email"><br>
+                                <label for="username">Username: </label><br>
+                                <input class="input" type="text" id="username"><br>
                                 <label for="password">Password: </label><br>
                                 <input class="input" type="password" id="password"><br><br>
-                                <button class="btn btn-block signUpButton" value="Sign Up">Sign Up</button>
+                                <button id="signupBtn" class="btn btn-block signUpButton" value="Sign Up" onclick="event.preventDefault(); validationCheck(function() {window.location.href='home.html';});">Sign Up</button>
                             </form>
                             <br>
                             <br>
-                            <p>Already have Account? <a href="#" id="sign-in"><abbr title="signin">Sign in</abbr></a></p>
+                            <p>Already have account? <a href="#" id="sign-in"><abbr title="signin">Sign in</abbr></a></p>
                         </div>
                         <div class="col-1"></div>
                     </div>

@@ -1,8 +1,8 @@
 .body {
-    background: rgb(96, 187, 141);
+    background: rgb(129, 216, 208);
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
-    color: white;
+    color: black;
 }
 
 /* Starter page CSS */
@@ -11,7 +11,7 @@
     height: 280px;
     /*border: solid 0.5px rgb(80, 79, 79);*/
     /*color: rgb(79, 126, 29);*/
-    color:white;
+    color:black;
     padding: 8px 8px;
 }
 
@@ -24,11 +24,11 @@
 #loginHeader h2 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    color: white;
+    color: black;
 }
 
 .startDiv label{
-    color: white;
+    color: black;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -43,11 +43,15 @@
 }
 
 #loginContainer {
-    padding-top: 20px;
+    padding-top: 0px;
+}
+
+#loginBtn {
+    font-weight: bold;
 }
 
 .loginButton {
-    background-color: rgb(79, 126, 29);
+    background-color: #03baa9;
     font-family: 'Roboto', sans-serif;
     /*border-radius: 10px;*/
     border: 2px solid black;
@@ -55,8 +59,12 @@
     font-size:32px;
 }
 
+#signupBtn {
+    font-weight: bold;
+}
+
 .signUpButton {
-    background-color: rgb(79, 126, 29);
+    background-color: #03baa9;
     font-family: 'Roboto', sans-serif;
     /*border-radius: 10px;*/
     border: 2px solid black;
@@ -91,14 +99,14 @@
     text-align: center;
     font-size: 21px;
     font-weight: 600;
-    color: #FCCA46;
+    color: black;
     margin-top: -5px;
 }
 #week {
     text-align: center;
     font-size: 19px;
     font-weight: 600;
-    color: #FCCA46;
+    color: black;
     margin-top: -15px;
     margin-bottom: -10px;
 }
@@ -119,7 +127,7 @@
     font-size: 18px;
     font-weight: 700;
     /*color: #FCCA46;*/
-   
+
 }
 
 .col-10 table tbody tr td {

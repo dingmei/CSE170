@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAiWIjeicshUn4lgra_0FBsgdtK8fREq0I",
+  authDomain: "gogreen-d8743.firebaseapp.com",
+  databaseURL: "https://gogreen-d8743.firebaseio.com",
+  projectId: "gogreen-d8743",
+  storageBucket: "gogreen-d8743.appspot.com",
+  messagingSenderId: "431026737257"
+};
+firebase.initializeApp(config);
+
 $(document).ready(function(){
     $("#sign-up").click(function(){
         $("#sign-up-console").show();
@@ -10,16 +21,47 @@ $(document).ready(function(){
     });
 });
 
-function login(){
+function getCurrentUserUID(){
+    var currentUser = firebase.auth().currentUser;
+    if (currentUser != null){
+        console.log("user id is: " + currentUser.uid);
+        return currentUser.uid;
+    }
+    return -1;
+}
 
+function login(e){
+    e.preventDefault();
     const email = document.getElementById('loginEmail').value;
     const pass = document.getElementById('loginPassword').value;
+    firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
+        window.location.href="./home.html";
+    });
+}
 
-
-    //real backend
-    //firebase.auth().signInWithEmailAndPassword(email,pass).then(function(){
-    //  window.location.href="./IssueList.html";
-    //});
-
-    window.location.href="./home.html";
+function validationCheck(callback) {
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    if (!email || !username || !password) {
+        alert("Please fill out all blanks!")
+    } else {
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(function() {
+            var newUID = getCurrentUserUID();
+            var newUserDirName = "User/" + newUID;
+            var ref = firebase.database().ref(newUserDirName);
+            console.log("ref is: " + ref);
+            ref.set({
+                username: username,
+                plantedTrees: 0,
+                duration: 30,
+                totalExerciseTime: 0,
+                totalExerciseDistance: 0
+            }).then(function() {
+                callback();
+            });
+        });
+        // window.location.href="./home.html";
+        // alert('Successfully Sign Up!');
+    }
 }
