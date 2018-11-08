@@ -38,14 +38,19 @@
       <span><h3>Plant</h3></span>
     </div>
     <hr style="margin-top: 0px;">
-    <div class="w3-container" id="timeSet">
-            <i class='fas fa-angle-up' style='font-size:36px;'></i>
-            <p>&nbsp;</p>
-            <i class='fas fa-angle-up' style='font-size:36px;'></i><br>
-            <p>30</p><p> : </p><p>00</p><br>
-            <i class='fas fa-angle-down' style='font-size:36px;'></i>
-            <p>&nbsp;</p>
-            <i class='fas fa-angle-down' style='font-size:36px;'></i><br>
+    <div class="w3-container" id="timeSet" style="display: flex; margin: 10px 95px ">
+      <div class="changeTimeSection">
+        <i class='fas fa-angle-up' style='font-size:36px;' onclick="changeHour(1);"></i><br>
+        <p id="savedHour"></p><br>
+        <i class='fas fa-angle-down' style='font-size:36px;' onclick="changeHour(0)"></i>
+      </div>
+      <div class="changeTimeSection" style="align-self: center;"><p>h</p></div>
+      <div class="changeTimeSection">
+        <i class='fas fa-angle-up' style='font-size:36px;' onclick="changeMin(1);"></i><br>
+        <p id="savedMin"></p><br>
+        <i class='fas fa-angle-down' style='font-size:36px;' onclick="changeMin(0)"></i>
+      </div>
+      <div class="changeTimeSection" style="align-self: center;"><p>m</p></div>
     </div>
 
     <div class="w3-container timeButton">
@@ -61,7 +66,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="JS/home.js"></script>
-
+    <script src="./JS/timeset.js"></script>
+    <script>window.onload = loadSavedTime();</script>
     
 </body>
 </html>
