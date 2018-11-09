@@ -148,10 +148,24 @@
 }
 
 #profile-card {
-    width: 90%;
+    /*width: 90%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
     background-color: #03baa9 #ef3234;
-    border-radius: 5px;
+    border-radius: 5px;*/
+    font-size: 36px;
+    padding:8px auto 8px auto;
+    margin:0 64px 0 64px;
+    display: flex; 
+}
+
+#profile-card::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: -30px;
+    z-index: -1;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
 }

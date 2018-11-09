@@ -78,7 +78,6 @@
             <p class="singleDec" onclick="done();">Done</p>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -92,10 +91,23 @@
             <p class="singleDec" onclick="gotIt();"">Got it</p>
           </div>
         </div>
-
       </div>
     </div>
 
+    <div id="startExeOverlay">
+        <div class="w3-display-container  w3-display-middle">
+          <div class="notification">
+            <div id="startExeBody">
+              <p>let's go!</p>
+            </div>
+            <div>
+              <p class="singleDec" onclick="done();">Done</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
     <div style="height: 288px;">
       <p>unused div for progress</p>
     </div>
@@ -111,7 +123,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="JS/home.js"></script>
-    <script>$(document).ready(startTime(30));</script>
+    <script>
+    $(document).ready(startTime());</script>
 
 </body>
 </html>
