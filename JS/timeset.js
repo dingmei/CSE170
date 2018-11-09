@@ -7,11 +7,8 @@ function loadSavedTime() {
             ref.once('value').then(function(snapshot) {
                 var hour = snapshot.val().durationHour;
                 var min = snapshot.val().durationMin;
-                if(min < 10 & min > 0){
+                if(min < 10 & min.toString().length == 1){
                     min = "0" + min;
-                }
-                if(min == 0){
-                    min = "00";
                 }
                 document.getElementById("savedHour").innerHTML = hour;
                 document.getElementById("savedMin").innerHTML = min;
