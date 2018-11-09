@@ -1,10 +1,9 @@
-;
 (function ($) {
 	$.fn.loading = function () {
 		var DEFAULTS = {
 			backgroundColor: 'white',
 			progressColor: '#03baa9',
-			percent: (parseInt(60)),
+			percent: (parseInt(window.localStorage.getItem("percentage"))),
 			duration: 500
 		};
 		
