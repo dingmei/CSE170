@@ -1,3 +1,7 @@
+$(document).ready(function(){
+    window.localStorage.setItem("percentage", "50");
+});
+
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -23,7 +27,7 @@ function done() {
     window.localStorage.setItem("isDelay",'false');
     var percentage = window.localStorage.getItem("percentage");
     percentage = parseInt(percentage) + 10;
-    window.localStorage.setItem("percentage",percentage.toString());
+    window.localStorage.setItem("percentage", percentage.toString());
     $(".progress-bar").loading();
     startTime();
 }
