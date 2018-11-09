@@ -129,7 +129,7 @@ function startTime() {
 
 function startExe(){
     document.getElementById("startExeOverlay").display = "block";
-    setTimeout({doneStart()},5000);
+    setTimeout(function(){doneStart()},5000);
 }
 
 function doneStart() {
