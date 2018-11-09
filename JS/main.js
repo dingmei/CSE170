@@ -52,6 +52,8 @@ function validationCheck(callback) {
             var newUID = getCurrentUserUID();
             var newUserDirName = "User/" + newUID;
             var ref = firebase.database().ref(newUserDirName);
+            window.localStorage.setItem("isDone",'true');
+            window.localStorage.setItem("isDelay",'false');
             console.log("ref is: " + ref);
             ref.set({
                 username: username,

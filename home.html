@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/home.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -37,7 +38,8 @@
       <a href="forest.html" class="w3-bar-item w3-button">My Forest</a>
       <a href="timeset.html" class="w3-bar-item w3-button">Time Setting</a>
       <a href="leaderboard.html" class="w3-bar-item w3-button">Leaderboard</a>
-      <a href="help.html" class="w3-bar-item w3-button">FAQ</a>
+      <a href="help.html" class="w3-bar-item w3-button">FAQs</a>
+      <a href="index.html" class="w3-bar-item w3-button" style="margin-top:312px;" onclick="logout()">Logout</a>
     </div>
 
     <!-- Overlay -->
@@ -107,13 +109,10 @@
         </div>
     </div>
 
-    
-    <div style="height: 288px;">
-      <p>unused div for progress</p>
-    </div>
+    <div class="progress-bar"></div>
 
     <div id="buttonSection">
-      <button type="button" class="btn btn-lg exeButton" onclick="startExe();">Exercise Now</button>
+      <button type="button" class="btn btn-lg exeButton" style="color:white" onclick="startExe();">Exercise Now</button>
     </div>
 
   </main>
@@ -124,6 +123,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="JS/home.js"></script>
     <script>$(document).ready(startTime());</script>
+    <script src="./JS/jQuery-plugin-progressbar.js"></script>
+    <script >
+      $(".progress-bar").loading();
+    </script>
 
 </body>
 </html>
