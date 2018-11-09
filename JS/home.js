@@ -21,6 +21,10 @@ function done() {
     document.getElementById("successOverlay").style.display = "none";
     window.localStorage.setItem("isDone",'true');
     window.localStorage.setItem("isDelay",'false');
+    var percentage = window.localStorage.getItem("percentage");
+    percentage = parseInt(percentage) + 10;
+    window.localStorage.setItem("percentage",percentage.toString());
+    $(".progress-bar").loading();
     startTime();
 }
 
@@ -137,4 +141,14 @@ function doneStart() {
     window.localStorage.setItem("isDone",'true');
     window.localStorage.setItem("isDelay",'false');
     startTime();
+}
+
+function logout(){
+    window.localStorage.removeItem("isDone");
+    window.localStorage.removeItem("isDelay");
+    window.localStorage.removeItem("startedHour");
+    window.localStorage.removeItem("startedMin");
+    window.localStorage.removeItem("startedSec");
+    firebase.auth().signOut();
+    location.href='index.html';
 }
