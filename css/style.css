@@ -5,7 +5,10 @@
     color: black;
 }
 
+/********************/
 /* Starter page CSS */
+/********************/
+
 .startDiv {
     /*background: white;*/
     height: 280px;
@@ -72,8 +75,9 @@
     font-size:32px;
 }
 
-
+/******************/
 /* Leaderboard CSS*/
+/******************/
 
 .header {
     padding-top: 20px;
@@ -90,9 +94,35 @@
     font-family: 'Roboto', sans-serif;
 }
 
+#leaderboard-card {
+    background: hsla(0,0%,100%,.25) border-box; 
+    border-radius: .3em;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    width: 320px;
+    margin: -8px auto 10px auto;
+    /*margin-top: 180px;*/
+    /*text-align: center;*/
+}
+
 #leaderboard-div {
-    padding-top: 0px;
-    height: 900px;
+    width: 100%;
+    font-size: 36px;
+    padding:8px auto 8px auto;
+    margin:0 54px 0 54px;
+    display: flex;
+    height: 78%;
+}
+
+#leaderboard-div::before{
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    margin: -30px;
+    z-index: -1;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
 }
 
 #title {
@@ -100,15 +130,16 @@
     font-size: 21px;
     font-weight: 600;
     color: black;
-    margin-top: -5px;
+    margin-top: 8px;
 }
+
 #week {
     text-align: center;
     font-size: 19px;
     font-weight: 600;
     color: black;
     margin-top: -15px;
-    margin-bottom: -10px;
+    margin-bottom: -15px;
 }
 
 .user-card {
@@ -126,7 +157,6 @@
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 700;
-    /*color: #FCCA46;*/
 
 }
 
@@ -147,16 +177,25 @@
     width: 28%;
 }
 
+/********************/
+/* Profile page CSS */
+/********************/
+
+#profile-div {
+    background: hsla(0,0%,100%,.25) border-box; 
+    border-radius: .3em;
+    box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
+                0 .5em 1em rgba(0, 0, 0, 0.6);
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.3);
+    width: 320px;
+    margin:96px auto 96px auto;
+    margin-top: 180px;
+}
+
 #profile-card {
-    /*width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-    background-color: #03baa9 #ef3234;
-    border-radius: 5px;*/
     font-size: 36px;
     padding:8px auto 8px auto;
-    margin:0 64px 0 64px;
+    margin:0 24px 0 24px;
     display: flex; 
 }
 
@@ -168,4 +207,17 @@
     z-index: -1;
     -webkit-filter: blur(20px);
     filter: blur(20px);
+}
+#profile-card table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#profile-card table tbody tr th {
+    font-size: 16px;
+    width: 180px;
+    color: black;
+}
+#profile-card table tbody tr td {
+    font-size: 16px;
+    color: black;
 }
