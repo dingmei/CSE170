@@ -4,7 +4,7 @@
 		var DEFAULTS = {
 			backgroundColor: 'white',
 			progressColor: '#03baa9',
-			percent: (parseInt(window.localStorage.getItem("percentage"))),
+			percent: (parseInt(60)),
 			duration: 500
 		};
 		
@@ -18,7 +18,7 @@
 			duration: $target.data('duration') ? $target.data('duration') : DEFAULTS.duration
 			};
 	
-			$target.append('<div class="background"></div><div class="rotate"></div><div class="left"></div><div class="right"></div><div class=""><span>' + opts.percent + '%</span></div>');
+			$target.append('<div class="background"></div><div class="rotate"></div><div class="left"></div><div class="right"></div><div class=""><span style="font-size: 24pt; font-weight: bold;">' + opts.percent + '%🌳</span></div>');
 	
 			$target.find('.background').css('background-color', opts.backgroundColor);
 			$target.find('.left').css('background-color', opts.backgroundColor);
