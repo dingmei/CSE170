@@ -74,6 +74,7 @@ function setTime(){
 
 function timeSetDone(){
     document.getElementById("timeSetOverlay").style.display = "none";
+    document.location.href = "home.html";
 }
 
 function resetTime(){

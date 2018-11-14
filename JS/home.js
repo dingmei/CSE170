@@ -1,7 +1,3 @@
-$(document).ready(function(){
-    window.localStorage.setItem("percentage", "50");
-});
-
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -136,15 +132,20 @@ function startTime() {
 
 
 function startExe(){
-    document.getElementById("startExeOverlay").display = "block";
-    setTimeout(function(){doneStart()},5000);
+    document.getElementById("startExeOverlay").style.display = "block";
 }
 
 function doneStart() {
     document.getElementById("startExeOverlay").style.display = "none";
     window.localStorage.setItem("isDone",'true');
     window.localStorage.setItem("isDelay",'false');
+    var per = parseInt(window.localStorage.getItem("percentage"));
+    per = per + 10;
+    if (per > 100)
+        per = 0;
+    window.localStorage.setItem("percentage",per.toString());
     startTime();
+    document.location.reload();
 }
 
 function logout(){
