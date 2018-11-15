@@ -137,7 +137,10 @@ function startTime() {
 
 
 function startExe(){
-    document.getElementById("startExeOverlay").style.display = "block";
+    setTimeout(function() { 
+        document.getElementById("startExeOverlay").style.display = "block";
+    }, 5000);
+    
 }
 
 function doneStart() {
