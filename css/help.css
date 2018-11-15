@@ -1,7 +1,9 @@
 .answer{
-    text-indent: 32px;
+    text-indent: 40px;
 }
 
 .w3-container a {
     font-size: 20px;
+    color: black;
+    text-decoration-line: none;
 }
