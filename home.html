@@ -48,14 +48,16 @@
 
     <!-- Page content -->
     <div class="w3-container">
-      <button class="w3-button w3-xlarge" onclick="w3_open()" style="color:white;">&#9776;</button>
-      <span><h3 onclick="javascript:introJs().start();">Plant</h3></span>
+      <button class="w3-button w3-xlarge" onclick="w3_open()" style="color:white;" data-step="5" data-intro="Here is the menu button, you can check your profile, see trees you earned in 'My Forest', and checkout your position in our weekly leaderboard">&#9776;</button>
+      <span><h3 onclick="introJs().start();">Plant</h3></span>
     </div>
     <hr style="margin-top: 0px;">
-    <div id="timerSection" onclick="location.href='timeset.html';">
+    <div data-step="1" data-intro="Welcome to Plant! Let's walk through the app together to let you get familiar with it.">
+    <div id="timerSection" onclick="location.href='timeset.html';" data-step="2" data-intro="Here is the timer to show you when will next exercise happen.">
       <h3>Next Exercise In</h3>
-      <p id="timer" data-step="1" data-intro="This is a timer!">00 : 00</p>
+      <p id="timer">00 : 00</p>
     </div>
+  </div>
 
     <div id="countdownOverlay">
       <div class="w3-display-container  w3-display-middle">
@@ -109,9 +111,24 @@
           </div>
         </div>
     </div>
-    <div class="progress-bar" id="progress-bar" onclick="test()"></div>
 
-    <div id="buttonSection">
+    <div id="treeEarnedOverlay">
+        <div class="w3-display-container  w3-display-middle">
+          <div class="notification">
+            <div id="treeEarnedBody">
+              <p>Congradulations !</p>
+              <p>You have reach your goal Keep exercising to stay healthy</p>
+            </div>
+            <div>
+              <p class="singleDec" onclick="treeEarnedDone();">Done</p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="progress-bar" id="progress-bar" onclick="flip();" data-step="3" data-intro="Here is the progress bar to show how far you have done to complete your goal."></div>
+
+    <div id="buttonSection" data-step="4" data-intro="If want to record your exercise before the countdown reaches zero, just click 'Exercise Now'.">
       <button type="button" class="btn btn-lg exeButton" style="color:white" onclick="startExe()">Exercise Now</button>
     </div>
 
@@ -125,6 +142,11 @@
     <script src="JS/intro.js"></script>
     <script>
       $(document).ready(startTime());
+      var isNew = window.localStorage.getItem("isNewUser");
+      if(isNew == 'true'){
+        introJs().start();
+        window.localStorage.setItem("isNewUser",'false');
+      }
     </script>
     <script src="./JS/jQuery-plugin-progressbar.js"></script>
     <script >

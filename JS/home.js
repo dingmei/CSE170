@@ -15,6 +15,7 @@ function go() {
 
 function goSuc() {
     document.getElementById("successOverlay").style.display = "block";
+
 }
 
 function done() {
@@ -25,7 +26,13 @@ function done() {
     percentage = parseInt(percentage) + 10;
     window.localStorage.setItem("percentage", percentage.toString());
     $(".progress-bar").loading();
-    startTime();
+    if (percentage == 100){
+        per = 0;
+        window.localStorage.setItem("percentage",per.toString());
+        document.getElementById("treeEarnedOverlay").style.display = "block";
+    }else{
+        startTime();
+    }
 }
 
 function never() {
@@ -140,12 +147,17 @@ function doneStart() {
     window.localStorage.setItem("isDone",'true');
     window.localStorage.setItem("isDelay",'false');
     var per = parseInt(window.localStorage.getItem("percentage"));
-    per = per + 10;
-    if (per > 100)
-        per = 0;
+    per = parseInt(per) + 10;
     window.localStorage.setItem("percentage",per.toString());
-    startTime();
-    document.location.reload();
+    $(".progress-bar").loading();
+    if (per == 100){
+        document.getElementById("treeEarnedOverlay").style.display = "block";
+        per = 0;
+        window.localStorage.setItem("percentage",per.toString());
+    }else{
+        document.location.reload();  
+    }
+    
 }
 
 function logout(){
@@ -158,6 +170,11 @@ function logout(){
     location.href='index.html';
 }
 
-function test(){
+function flip(){
     document.getElementById("progress-bar").style.display = "none";
+}
+
+function treeEarnedDone(){
+    document.getElementById("treeEarnedOverlay").style.display = "none";
+    document.location.reload();
 }

@@ -57,6 +57,7 @@ function validationCheck(callback) {
             var ref = firebase.database().ref(newUserDirName);
             window.localStorage.setItem("isDone",'true');
             window.localStorage.setItem("isDelay",'false');
+            window.localStorage.setItem("isNewUser",'true');
             console.log("ref is: " + ref);
             ref.set({
                 username: username,
