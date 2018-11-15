@@ -25,11 +25,9 @@ function done() {
     var percentage = window.localStorage.getItem("percentage");
     percentage = parseInt(percentage) + 10;
     window.localStorage.setItem("percentage", percentage.toString());
-    $(".progress-bar").loading();
+    
     if (percentage == 100){
-        per = 0;
-        window.localStorage.setItem("percentage",per.toString());
-        document.getElementById("treeEarnedOverlay").style.display = "block";
+        document.location.reload();
     }else{
         startTime();
     }
@@ -149,14 +147,9 @@ function doneStart() {
     var per = parseInt(window.localStorage.getItem("percentage"));
     per = parseInt(per) + 10;
     window.localStorage.setItem("percentage",per.toString());
-    $(".progress-bar").loading();
-    if (per == 100){
-        document.getElementById("treeEarnedOverlay").style.display = "block";
-        per = 0;
-        window.localStorage.setItem("percentage",per.toString());
-    }else{
-        document.location.reload();  
-    }
+    
+    document.location.reload();  
+    
     
 }
 
@@ -177,4 +170,16 @@ function flip(){
 function treeEarnedDone(){
     document.getElementById("treeEarnedOverlay").style.display = "none";
     document.location.reload();
+}
+
+function loadProgress(){
+    $(".progress-bar").loading();
+    var per = parseInt(window.localStorage.getItem("percentage"));
+    setTimeout(function() { 
+        if (per == 100){
+            document.getElementById("treeEarnedOverlay").style.display = "block";
+            per = 0;
+            window.localStorage.setItem("percentage",per.toString());
+        }
+    }, 600);
 }
