@@ -10,7 +10,7 @@ var config = {
 firebase.initializeApp(config);
 
 $(document).ready(function(){
-    window.localStorage.setItem("percentage", "50");
+    window.localStorage.setItem("percentage", "0");
     $("#sign-up").click(function(){
         $("#sign-up-console").show();
         $("#loginConsole").hide();
