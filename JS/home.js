@@ -137,21 +137,20 @@ function startTime() {
 
 
 function startExe(){
-    setTimeout(function() { 
-        document.getElementById("startExeOverlay").style.display = "block";
-    }, 5000);
-    
+    document.getElementById("startExeOverlay").style.display = "block";
 }
 
 function doneStart() {
-    document.getElementById("startExeOverlay").style.display = "none";
-    window.localStorage.setItem("isDone",'true');
-    window.localStorage.setItem("isDelay",'false');
-    var per = parseInt(window.localStorage.getItem("percentage"));
-    per = parseInt(per) + 10;
-    window.localStorage.setItem("percentage",per.toString());
-    
-    document.location.reload();  
+    setTimeout(function() { 
+        document.getElementById("startExeOverlay").style.display = "none";
+        window.localStorage.setItem("isDone",'true');
+        window.localStorage.setItem("isDelay",'false');
+        var per = parseInt(window.localStorage.getItem("percentage"));
+        per = parseInt(per) + 10;
+        window.localStorage.setItem("percentage",per.toString());
+        
+        document.location.reload();
+    }, 5000);
     
     
 }
