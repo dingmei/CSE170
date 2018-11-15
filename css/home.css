@@ -247,6 +247,10 @@
   opacity: 0;
   background-color: #4b86db;
 }
+.progress-bar:active {
+    background-color: none;
+    transform: translateY(4px);
+  }
  @keyframes 
 toggle {  0% {
  opacity: 0;

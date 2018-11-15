@@ -39,7 +39,9 @@ function login(e){
         window.localStorage.setItem("isDone",'true');
         window.localStorage.setItem("isDelay",'false');
         window.location.href="./home.html";
-    });
+    }).catch(function(error) {
+        alert("Your email/password is incorrect, please check!")
+      });
 }
 
 function validationCheck(callback) {

@@ -157,3 +157,7 @@ function logout(){
     firebase.auth().signOut();
     location.href='index.html';
 }
+
+function test(){
+    document.getElementById("progress-bar").style.display = "none";
+}
