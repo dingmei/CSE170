@@ -141,18 +141,21 @@ function startExe(){
 }
 
 function doneStart() {
+    document.getElementById("startExeOverlay").style.display = "none";
     setTimeout(function() { 
-        document.getElementById("startExeOverlay").style.display = "none";
-        window.localStorage.setItem("isDone",'true');
-        window.localStorage.setItem("isDelay",'false');
-        var per = parseInt(window.localStorage.getItem("percentage"));
-        per = parseInt(per) + 10;
-        window.localStorage.setItem("percentage",per.toString());
-        
-        document.location.reload();
+        document.getElementById("successOverlay2").style.display = "block";
     }, 5000);
-    
-    
+}
+
+function done2(){
+    document.getElementById("successOverlay2").style.display = "none";
+    window.localStorage.setItem("isDone",'true');
+    window.localStorage.setItem("isDelay",'false');
+    var per = parseInt(window.localStorage.getItem("percentage"));
+    per = parseInt(per) + 10;
+    window.localStorage.setItem("percentage",per.toString());
+        
+    document.location.reload();
 }
 
 function logout(){
@@ -167,7 +170,14 @@ function logout(){
 
 function flip(){
     document.getElementById("progress-bar").style.display = "none";
+    document.getElementById("statusMask").style.display = "block";
 }
+
+function flip2(){
+    document.getElementById("statusMask").style.display = "none";
+    document.getElementById("progress-bar").style.display = "block";
+}
+
 
 function treeEarnedDone(){
     document.getElementById("treeEarnedOverlay").style.display = "none";
@@ -175,6 +185,10 @@ function treeEarnedDone(){
 }
 
 function loadProgress(){
+    var per = window.localStorage.getItem("percentage");
+    var text = document.getElementById("goalComplete").innerText;
+    document.getElementById("goalComplete").innerHTML = text + per + "%";
+    
     $(".progress-bar").loading();
     var per = parseInt(window.localStorage.getItem("percentage"));
     setTimeout(function() { 

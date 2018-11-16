@@ -69,6 +69,8 @@ function validationCheck(callback) {
             }).then(function() {
                 callback();
             });
-        });
+        }).catch(function(error) {
+            alert("Your email/password is incorrect, please check!")
+          });
     }
 }

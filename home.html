@@ -112,6 +112,19 @@
         </div>
     </div>
 
+    <div id="successOverlay2">
+        <div class="w3-display-container  w3-display-middle">
+          <div class="notification">
+            <div id="succBody2">
+              <p>Nice work, you get closer to your goal!</p>
+            </div>
+            <div>
+              <p class="singleDec" onclick="done2();">Done</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <div id="treeEarnedOverlay">
         <div class="w3-display-container  w3-display-middle">
           <div class="notification">
@@ -127,10 +140,18 @@
     </div>
 
     <div class="progress-bar" id="progress-bar" onclick="flip();" data-step="3" data-intro="Here is the progress bar to show how far you have done to complete your goal."></div>
-
+    <div id="statusMask">
+      <div id="statusBar" onclick="flip2();">
+        <p id="goalComplete">Goal Completed: </p>
+        <p id="nextExe">Next Exercise:</p>
+        <p>Walk for 5 seconds</p>
+      
+      </div>
+    </div>
     <div id="buttonSection" data-step="4" data-intro="If want to record your exercise before the countdown reaches zero, just click 'Exercise Now'.">
       <button type="button" class="btn btn-lg exeButton" style="color:white" onclick="startExe()">Exercise Now</button>
     </div>
+    
 
   </main>
 
