@@ -70,7 +70,12 @@ function validationCheck(callback) {
                 callback();
             });
         }).catch(function(error) {
-            alert("Your email/password is incorrect, please check!")
+            if(password.length < 6){
+                alert("Your password is less than 6 digits.");
+            }else if(!email.includes("@")){
+                alert("Your email format is incorrect.")
+            }
+            
           });
     }
 }
