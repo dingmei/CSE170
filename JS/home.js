@@ -10,7 +10,11 @@ function w3_close() {
 
 function go() {
     document.getElementById("countdownOverlay").style.display = "none";
-    setTimeout(function() { goSuc() }, 5000);
+    document.getElementById("exercisingOverlay").style.display = "block";
+    setTimeout(function() { 
+        document.getElementById("exercisingOverlay").style.display = "none";
+        goSuc();
+     }, 5000);
 }
 
 function goSuc() {
@@ -63,7 +67,7 @@ function startTime() {
                 var min = snapshot.val().durationMin;
                 var countdown  = parseInt(min) + parseInt(hour) * 60;
                 if(isDelay == 'true'){
-                    countdown = 10;
+                    countdown = parseInt(min) + parseInt(hour) * 60;
                 }else{
                     countdown = parseInt(min) + parseInt(hour) * 60;
                 }
@@ -142,7 +146,9 @@ function startExe(){
 
 function doneStart() {
     document.getElementById("startExeOverlay").style.display = "none";
+    document.getElementById("exercisingOverlay").style.display = "block";
     setTimeout(function() { 
+        document.getElementById("exercisingOverlay").style.display = "none";
         document.getElementById("successOverlay2").style.display = "block";
     }, 5000);
 }
