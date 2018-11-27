@@ -10,7 +10,7 @@ var config = {
 firebase.initializeApp(config);
 
 $(document).ready(function(){
-    window.localStorage.setItem("percentage", "50");
+    window.localStorage.setItem("percentage", "0");
     $("#sign-up").click(function(){
         $("#sign-up-console").show();
         $("#loginConsole").hide();
@@ -39,7 +39,9 @@ function login(e){
         window.localStorage.setItem("isDone",'true');
         window.localStorage.setItem("isDelay",'false');
         window.location.href="./home.html";
-    });
+    }).catch(function(error) {
+        alert("Your email/password is incorrect, please check!")
+      });
 }
 
 function validationCheck(callback) {
@@ -55,6 +57,7 @@ function validationCheck(callback) {
             var ref = firebase.database().ref(newUserDirName);
             window.localStorage.setItem("isDone",'true');
             window.localStorage.setItem("isDelay",'false');
+            window.localStorage.setItem("isNewUser",'true');
             console.log("ref is: " + ref);
             ref.set({
                 username: username,
@@ -66,6 +69,13 @@ function validationCheck(callback) {
             }).then(function() {
                 callback();
             });
-        });
+        }).catch(function(error) {
+            if(password.length < 6){
+                alert("Your password is less than 6 digits.");
+            }else if(!email.includes("@")){
+                alert("Your email format is incorrect.")
+            }
+            
+          });
     }
 }

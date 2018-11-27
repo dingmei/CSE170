@@ -1,7 +1,3 @@
-$(document).ready(function(){
-    window.localStorage.setItem("percentage", "50");
-});
-
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
@@ -14,11 +10,16 @@ function w3_close() {
 
 function go() {
     document.getElementById("countdownOverlay").style.display = "none";
-    setTimeout(function() { goSuc() }, 5000);
+    document.getElementById("exercisingOverlay").style.display = "block";
+    setTimeout(function() { 
+        document.getElementById("exercisingOverlay").style.display = "none";
+        goSuc();
+     }, 5000);
 }
 
 function goSuc() {
     document.getElementById("successOverlay").style.display = "block";
+
 }
 
 function done() {
@@ -28,8 +29,12 @@ function done() {
     var percentage = window.localStorage.getItem("percentage");
     percentage = parseInt(percentage) + 10;
     window.localStorage.setItem("percentage", percentage.toString());
-    $(".progress-bar").loading();
-    startTime();
+    
+    if (percentage == 100){
+        document.location.reload();
+    }else{
+        startTime();
+    }
 }
 
 function never() {
@@ -62,7 +67,7 @@ function startTime() {
                 var min = snapshot.val().durationMin;
                 var countdown  = parseInt(min) + parseInt(hour) * 60;
                 if(isDelay == 'true'){
-                    countdown = 10;
+                    countdown = parseInt(min) + parseInt(hour) * 60;
                 }else{
                     countdown = parseInt(min) + parseInt(hour) * 60;
                 }
@@ -136,15 +141,27 @@ function startTime() {
 
 
 function startExe(){
-    document.getElementById("startExeOverlay").display = "block";
-    setTimeout(function(){doneStart()},5000);
+    document.getElementById("startExeOverlay").style.display = "block";
 }
 
 function doneStart() {
     document.getElementById("startExeOverlay").style.display = "none";
+    document.getElementById("exercisingOverlay").style.display = "block";
+    setTimeout(function() { 
+        document.getElementById("exercisingOverlay").style.display = "none";
+        document.getElementById("successOverlay2").style.display = "block";
+    }, 5000);
+}
+
+function done2(){
+    document.getElementById("successOverlay2").style.display = "none";
     window.localStorage.setItem("isDone",'true');
     window.localStorage.setItem("isDelay",'false');
-    startTime();
+    var per = parseInt(window.localStorage.getItem("percentage"));
+    per = parseInt(per) + 10;
+    window.localStorage.setItem("percentage",per.toString());
+        
+    document.location.reload();
 }
 
 function logout(){
@@ -155,4 +172,36 @@ function logout(){
     window.localStorage.removeItem("startedSec");
     firebase.auth().signOut();
     location.href='index.html';
+}
+
+function flip(){
+    document.getElementById("progress-bar").style.display = "none";
+    document.getElementById("statusMask").style.display = "block";
+}
+
+function flip2(){
+    document.getElementById("statusMask").style.display = "none";
+    document.getElementById("progress-bar").style.display = "block";
+}
+
+
+function treeEarnedDone(){
+    document.getElementById("treeEarnedOverlay").style.display = "none";
+    document.location.reload();
+}
+
+function loadProgress(){
+    var per = window.localStorage.getItem("percentage");
+    var text = document.getElementById("goalComplete").innerText;
+    document.getElementById("goalComplete").innerHTML = text + per + "%";
+    
+    $(".progress-bar").loading();
+    var per = parseInt(window.localStorage.getItem("percentage"));
+    setTimeout(function() { 
+        if (per == 100){
+            document.getElementById("treeEarnedOverlay").style.display = "block";
+            per = 0;
+            window.localStorage.setItem("percentage",per.toString());
+        }
+    }, 600);
 }
